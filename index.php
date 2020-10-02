@@ -1,6 +1,6 @@
 <?php
 
-define('BASE_URL', '/');
+define('"/comem-archidep-php-todo-exercise/"', '/');
 define('DB_USER', 'todolist');
 define('DB_PASS', 'mikkel');
 define('DB_NAME', 'todolist');
@@ -26,7 +26,7 @@ if (isset($_POST['action'])) {
         }
       }
 
-      header('Location: '.BASE_URL);
+      header('Location: '."/comem-archidep-php-todo-exercise/");
       die();
 
     /**
@@ -37,13 +37,13 @@ if (isset($_POST['action'])) {
 
       $id = $_POST['id'];
       if(is_numeric($id)) {
-        $updateQuery = 'UPDATE todo SET done = !done WHERE id = '$id' '; // IMPLEMENT ME
+        $updateQuery = "UPDATE todo SET done = !done WHERE id = '$id' "; // IMPLEMENT ME
         if(!$db->query($updateQuery)) {
           die(print_r($db->errorInfo(), true));
         }
       }
 
-      header('Location: '.BASE_URL);
+      header('Location: '."/comem-archidep-php-todo-exercise/");
       die();
 
     /**
@@ -59,7 +59,7 @@ if (isset($_POST['action'])) {
         }
       }
 
-      header('Location: '.BASE_URL);
+      header('Location: '."/comem-archidep-php-todo-exercise/");
       die();
 
     default:
@@ -107,7 +107,7 @@ $items = $db->query($selectQuery);
     <main role="main" class='offset-3 col-6 mt-3'>
 
       <!-- Todo item creation form -->
-      <form action='<?= BASE_URL ?>' method='post' class='form-inline justify-content-center'>
+      <form action='<?= "/comem-archidep-php-todo-exercise/" ?>' method='post' class='form-inline justify-content-center'>
         <input type='hidden' name='action' value='new' />
 
         <div class='form-group'>
@@ -128,7 +128,7 @@ $items = $db->query($selectQuery);
             <div class='title'><?= $item['title'] ?></div>
 
             <!-- Todo item controls -->
-            <form action='<?= BASE_URL ?>' method='post'>
+            <form action='<?= "/comem-archidep-php-todo-exercise/" ?>' method='post'>
               <input type='hidden' name='id' value='<?= $item['id'] ?>' />
 
               <div class='btn-group btn-group-sm'</div>
